@@ -1,0 +1,94 @@
+body {
+    background: #f2f2f2;
+}
+
+table{
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+.datePicker {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+    min-width: auto;
+    background: transparent;
+    border: 1px solid #530a64;
+    padding-bottom: 15px;
+}
+
+.datePicker .calendar-heading {
+    border-radius: 0;
+    background: #530a64;
+    padding: 10px 30px;
+    margin-bottom: 15px;
+}
+
+.datePicker .datePicker-calendar tr th {
+    color: #799f2e;
+}
+
+.datePicker .datePicker-calendar tr td {
+    position: relative;
+    width: 55px;
+    height: 45px;
+    border: 1px solid #616161;
+    vertical-align: top;
+    padding: 0;
+    padding-top: 4px;
+    color: #616161;
+/*    font-weight: 600;*/
+    border-radius: 0;
+}
+
+/*
+.datePicker .datePicker-calendar tr td:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: 1px solid #b5b5b5;
+}
+*/
+
+.datePicker .datePicker-calendar tr td.next-month-date,
+.datePicker .datePicker-calendar tr td.prev-month-date {
+    opacity: 0;
+    visibility: hidden;
+    border: none;
+}
+
+.datePicker .datePicker-calendar tr td:hover,
+.datePicker .datePicker-calendar tr td.active,
+.datePicker .datePicker-calendar tr td.active.disabled:hover,
+.datePicker .datePicker-calendar tr td.active:hover {
+    color: #530a64;
+    background: #fff;
+    border-color: #530a64;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/*
+.datePicker .datePicker-calendar tr td:hover:after,
+.datePicker .datePicker-calendar tr td.active:after,
+.datePicker .datePicker-calendar tr td.active.disabled:hover:after,
+.datePicker .datePicker-calendar tr td.active:hover:after,
+.datePicker .datePicker-calendar tr td:after {
+    border-color: #530a64;
+}
+*/
+
+.datePicker .datePicker-calendar tr td.today,
+.datePicker .datePicker-calendar tr td.today.disabled:hover {
+    background: #fff;
+    color: #799f2e;
+    border-color: #799f2e;
+    box-shadow: none;
+}
+
+/*
+.datePicker .datePicker-calendar tr td.today:after,
+.datePicker .datePicker-calendar tr td.today.disabled:hover:after {
+    border-color: #799f2e;
+}*/
