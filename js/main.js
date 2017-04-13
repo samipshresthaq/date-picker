@@ -5,26 +5,25 @@
 	var options1 = {
 		multipleDate : true,
         showCurrentDateButton: false,
-        preDates: ['2017-3-1','2017-3-15','2017-3-14'],//yyyy-mm-dd
-        preDatesClickable: true,
+        preDates: ['2017-03-01','2017-03-30','2017-03-14'],//yyyy-mm-dd
         showCurrentDateButton: true,
         activation: 'alwaysOn',
-        singleCalendarMode: true,
+        singleCalendarMode: false,
         showCurrentDate: true,
         callback: function(date){
             console.log(date);
         },
-        format: 'DD/MM/YYYY',	
+//        format: 'DD/MM/YYYY',	
         setWeekHoliday: false,
         holiday: 'saturday',
-        preDatesOnlyClickable: false
+        disableClickToggle: false
         
 		//minDate: '1/3/2017', // dd/mm/yyyy
         //maxDate: '3/3/2017',
         //animation: 'flipInY',
 	}
     var options2 = {
-		multipleDate : true,
+		multipleDate : false,
 		minDate: '1/3/2017', // dd/mm/yyyy
 		maxDate: '14/3/2017',
 //		animation: 'flipInY',
@@ -33,9 +32,11 @@
         showCurrentDateButton: false,
         singleCalendarMode: false,
         disableClickEvent : false,
-        format: 'D MMMM, YYYY'	
+//        disableClickToggle: true
+
+//        format: 'D MMMM, YYYY'	
 	}
 
-	$('.date').datePicky(options1);
-	$('#date1').datePicky(options2);
+	$('#input-date').datePicky(options2);
+	$('.div-date').datePicky(options1);
 })();

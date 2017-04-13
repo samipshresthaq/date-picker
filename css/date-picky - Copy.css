@@ -127,10 +127,7 @@
 .datePicker .datePicker-calendar tr td.next-month-date {
     color: #95a5a6;
 }
-.datePicker .datePicker-calendar tr td.hidden{
-    opacity: 0;
-    visibility: hidden;
-}
+
 .datePicker .datePicker-calendar tr td.disabled {
     cursor: not-allowed;
     color: #d8d6d6;
