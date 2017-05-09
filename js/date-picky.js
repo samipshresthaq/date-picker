@@ -206,7 +206,7 @@
                     AppendDate.updateActiveDates(that, options);
                     //Set date in input if multipledate format is enabled
                     if (options.multipleDate) {
-                        for (let i = 0; i < activeDates.length; i++) {
+                        for (var i = 0; i < activeDates.length; i++) {
                             dateInFormat = AppendDate.getDateFormat(activeDates[i], options.format);
                             if (i == 0) {
                                 $(_this).val(dateInFormat);

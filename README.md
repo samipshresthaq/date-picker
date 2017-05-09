@@ -1,5 +1,5 @@
 # date-picky
-date-picky is a date picker with great graphics
+date-picky is a date picker with multiple features
 
 #USAGE
 
