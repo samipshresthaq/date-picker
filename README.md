@@ -60,7 +60,7 @@ date-picky is a date picker with great graphics
 		You can change the heading background color of datepicker by passing the option. 
 		__headingBackground : your color code__
 	
-	- _Body Background color_
+	- _Body Background color_ (currently removed)
 		You can change the body background color of datepicker by passing the option.
         (removed current) 
 		__bodyBackground : your color code__
