@@ -3,7 +3,7 @@
 	'use strict';
 
 	var options1 = {
-		multipleDate : true,
+		multipleDate : false,
         showCurrentDateButton: false,
         preDates: ['2017-03-01','2017-03-30','2017-03-14'],//yyyy-mm-dd
         showCurrentDateButton: true,
@@ -16,7 +16,7 @@
 //        format: 'DD/MM/YYYY',	
         setWeekHoliday: false,
         holiday: 'saturday',
-        disableClickToggle: false
+        disableClickToggle: true
         
 		//minDate: '1/3/2017', // dd/mm/yyyy
         //maxDate: '3/3/2017',

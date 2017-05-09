@@ -220,7 +220,8 @@
                         }
                     } else { // Set a single value in input field
                         $(_this).val(AppendDate.getDateFormat(activeDates[0], options.format));
-                        DatePicker.removeDatePicker(_this);
+                        if( options.activation != 'alwaysOn')
+                            {DatePicker.removeDatePicker(_this);}
                     }
                     // Callback funtion call if it is set
                     if (options.callback) {
