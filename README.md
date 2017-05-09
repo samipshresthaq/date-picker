@@ -15,34 +15,44 @@ date-picky is a date picker with great graphics
 	You can use different features of date picker by sending an object to date picker as argument. eg:
 		 var options = {
 			multipleDate : true,
-			minDate: '8/10/2015',
-			maxDate: '8/3/2016',
+			minDate: '2017-03-18',
+			maxDate: '2017-05-28',
 			format : 'mm-dd-yy',
 			animation: 'bounceIn',
-			headingBackground: '#223922',//removed
-			bodyBackground: '#796423',//removed
-            activation: 'always-on',
+            activation: 'alwaysOn',
             singleCalendarMode: true,
             showCurrentDate: false,
             preDates: ['2017/3/1','2017/3/15','2017/3/14'],//yyyy-mm-dd
-            preDatesClickable: true
+            preDatesClickable: true,
+            setWeekHoliday: false,
+            holiday: 'saturday',
+            disableClickToggle: true,
+            
+            callback: function(date){
+                console.log(date);
+            },
+			headingBackground: '#223922',//removed
+			bodyBackground: '#796423'//removed
 		}
 		$('#yourSelector').datePicky(options);
 	
 	The different types of feature are:
 	
 	- _Multiple Date_  
-		If set to true you can select multiple date from date picker.
+		If set true you can select multiple date from date picker. By default it is enabled. 
+            eg. __multipleDate : true__
 	
 	- _Minimum Date_ 
-		If defined the date older than the minimum dates are disabled.
+		If set, the date older than the minimum dates are disabled.
+            eg. __minDate: '2017-03-18'__ (Format yyy-mm-dd )
 	
 	- _Maximum Date_ 
-		If defined the date later than the maximum dates are disabled.
+		If set, the date later than the maximum dates are disabled.
+            eg. __maxDate: '2017-05-28'__ (Format yyy-mm-dd )
 	
 	- _Date formats_
-		You can get different types of date format by passing the argument format. 
-		The different types of available date format are:
+		You can display different date formats by passing the format option. 
+		The available date formats are:
 			1. DD/MM/YYYY (08/12/2014) 
 			2. MM/DD/YYYY (08/24/2019) 
 			3. DD-MM-YYYY (08-12-2014) 
@@ -52,45 +62,46 @@ date-picky is a date picker with great graphics
 			7. D MMMM, YYYY (8 February, 2016)
 	
 	- _Animation_ 
-		There are two animations available for selection
+		There are two animations available for datepicker from animate.css
 			1. __bounceIn__
 			2. __flipInY__
 	
-	- _Heading Background color_
+	- _Heading Background color_ (currently removed)
 		You can change the heading background color of datepicker by passing the option. 
-		__headingBackground : your color code__
+		  eg. __headingBackground : your color code__
 	
 	- _Body Background color_ (currently removed)
 		You can change the body background color of datepicker by passing the option.
         (removed current) 
-		__bodyBackground : your color code__
+		  eg. __bodyBackground : your color code__
         
     - _Activation Option_
-        You can set datepicky activation mode. Set always-on for always showing datepicker and onClick mode for datepicker activation on click.
-        __activation : alwaysOn__
+        You can set date picker activation mode. Set alwaysOn(default) for always showing datepicker and onClick mode for datepicker activation on click. eg
+            1. __activation : alwaysOn__
+            2. __activation : onClick__
     
     - _Single Calendar Mode_
-        You can set single calendar mode by sending true option. Default is multiple calendar mode.
-            1. __singleCalendarMode : true__
+        If set to true you can select dates for current month only. If set false you can traverse throught all months. By default it is disabled. 
+            eg. __singleCalendarMode : true__
             
     - _Show Current Date_
-        You can hide current date by setting it to false. By default current date is shown.
-            1. __showCurrentDate: false__
+        You can dhide current date by setting showCurrentDate to false. By default current date is shown.
+            eg. __showCurrentDate: false__
     
     - _Pre Dates_
-        You can set pre activated dates by sending in the options. Pre dates must be sent in array in yyyy-mm-dd format.
-            1. __preDates: ['2017/3/1','2017/3/15','2017/3/14']__
+        You can set pre activated dates by sending in preDates options. Pre dates must be sent in array in yyyy-mm-dd format.
+            eg. __preDates: ['2017-3-1','2017-3-15','2017-3-14']__
             
-    - _Pre Dates Disable_
+    - _Pre Dates Click Option_
         You can disable click on pre activated dates by setting it to false. By default its disabled.
-            1. __preDatesClickable: true__
+            eg. __preDatesClickable: true__
     
-    - Go to current date button
-        You can enable "Go to current date" button by providing parameter as
-        __showCurrentDateButton = true__
-
- setWeekHoliday: false,
-                holiday: 'sunday'
+    - _Go to current date button_
+        You can disable "Go to current date" button by providing parameter as. By default its enabled.
+            eg. __showCurrentDateButton = false__
+            
+    - _Callback Function_
+    
 #Demo
 
 You can see demo here

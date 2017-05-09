@@ -17,7 +17,7 @@
                 multipleDate: true,
                 format: 'YYYY-MM-DD',
                 animation: '', //headingBackground: '#797979',
-                bodyBackground: '#fff',
+//                bodyBackground: '#fff',
                 showCurrentDate: true,
                 activation: 'alwaysOn',
                 singleCalendarMode: false,
@@ -34,12 +34,8 @@
             activeDates = [],
             currentDate = newDate.getDate(), // Days name label in order
             daysLabels = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'], // Month name labels in order
-            monthsLabels = ['January', 'February', 'March', 'April'
-                            , 'May', 'June', 'July', 'August', 'September'
-                            , 'October', 'November', 'December'], // Min Month name labels in order
-            monthsLabelsMin = ['Jan', 'Feb', 'Mar', 'Apr'
-                            , 'May', 'Jun', 'Jul', 'Aug', 'Sep'
-                            , 'Oct', 'Nov', 'Dec'],
+            monthsLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], // Min Month name labels in order
+            monthsLabelsMin = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
             /**
              * [daysInMonth calculates total days in a month]
              * @param  {[int]} month [month value]
@@ -99,19 +95,19 @@
                  */
                 getDateFormat: function (dateToConvert, dateFormat) {
                     var finalFormat, fullDate = dateToConvert.split('-');
-                    if (dateFormat == 'DD/MM/YYYY') {
+                    if (dateFormat === 'DD/MM/YYYY') {
                         finalFormat = AppendDate.formattedDate(fullDate[2], fullDate[1], fullDate[0], '/');
-                    } else if (dateFormat == 'MM/DD/YYYY') {
+                    } else if (dateFormat === 'MM/DD/YYYY') {
                         finalFormat = AppendDate.formattedDate(fullDate[1], fullDate[2], fullDate[0], '/');
-                    } else if (dateFormat == 'DD-MM-YYYY') {
+                    } else if (dateFormat === 'DD-MM-YYYY') {
                         finalFormat = AppendDate.formattedDate(fullDate[2], fullDate[1], fullDate[0], '-');
-                    } else if (dateFormat == 'mm-dd-yy') {
+                    } else if (dateFormat === 'MM-DD-YYYY') {
                         finalFormat = AppendDate.formattedDate(fullDate[1], fullDate[2], fullDate[0], '-');
-                    } else if (dateFormat == 'YYYY-MM-DD') {
+                    } else if (dateFormat === 'YYYY-MM-DD') {
                         finalFormat = AppendDate.formattedDate(fullDate[0], fullDate[1], fullDate[2], '-');
-                    } else if (dateFormat == 'D MMM, YYYY') {
+                    } else if (dateFormat === 'D MMM, YYYY') {
                         finalFormat = fullDate[2] + ' ' + monthsLabelsMin[parseInt(fullDate[1]) - 1] + ', ' + fullDate[0];
-                    } else if (dateFormat == 'D MMMM, YYYY') {
+                    } else if (dateFormat === 'D MMMM, YYYY') {
                         finalFormat = fullDate[2] + ' ' + monthsLabels[parseInt(fullDate[1]) - 1] + ', ' + fullDate[0];
                     } else {
                         jQuery.error('The defined date format is not supported ' + dateFormat + ' .');
@@ -210,7 +206,7 @@
                     AppendDate.updateActiveDates(that, options);
                     //Set date in input if multipledate format is enabled
                     if (options.multipleDate) {
-                        for (var i = 0; i < activeDates.length; i++) {
+                        for (let i = 0; i < activeDates.length; i++) {
                             dateInFormat = AppendDate.getDateFormat(activeDates[i], options.format);
                             if (i == 0) {
                                 $(_this).val(dateInFormat);
@@ -247,13 +243,13 @@
                  * @return {[DOM element]}               [element with object class]
                  */
                 checkForMinDate: function ($element, year, month, date, fullStartDate) {
-                    if (year < fullStartDate[2]) {
+                    if (year < fullStartDate[0]) {
                         $element.addClass('disabled');
-                    } else if (year == fullStartDate[2]) {
+                    } else if (year == fullStartDate[0]) {
                         if (month < fullStartDate[1]) {
                             $element.addClass('disabled');
                         } else if (month == fullStartDate[1]) {
-                            if (date < fullStartDate[0]) {
+                            if (date < fullStartDate[2]) {
                                 $element.addClass('disabled');
                             }
                         }
@@ -270,13 +266,13 @@
                  * @return {[DOM element]}             [element with object class]
                  */
                 checkForMaxDate: function ($element, year, month, date, fullEndDate) {
-                    if (year > fullEndDate[2]) {
+                    if (year > fullEndDate[0]) {
                         $element.addClass('disabled');
-                    } else if (year == fullEndDate[2]) {
+                    } else if (year == fullEndDate[0]) {
                         if (month > fullEndDate[1]) {
                             $element.addClass('disabled');
                         } else if (month == fullEndDate[1]) {
-                            if (date > fullEndDate[0]) {
+                            if (date > fullEndDate[2]) {
                                 $element.addClass('disabled');
                             }
                         }
@@ -337,10 +333,10 @@
                 setDates: function ($table, _this, options) {
                     var fullStartDate, fullEndDate, activeDatesArray = [];
                     if (options.minDate) {
-                        fullStartDate = options.minDate.split('/');
+                        fullStartDate = options.minDate.split('-');
                     };
                     if (options.maxDate) {
-                        fullEndDate = options.maxDate.split('/');
+                        fullEndDate = options.maxDate.split('-');
                     };
                     //Active Dates Array Setup
                     if (activeDates) {
@@ -509,11 +505,11 @@
                 });
                 $datePicker = AppendDate.setTable($datePicker, _this, options);
                 $datePicker.addClass('animated ' + options.animation);
-                if (options.activation == 'onClick') {
-                    $datePicker.css({
-                        background: options.bodyBackground
-                    });
-                }
+//                if (options.activation == 'onClick') {
+//                    $datePicker.css({
+//                        background: options.bodyBackground
+//                    });
+//                }
                 $datePicker.insertAfter($(_this));
                 if (options.activation == "onClick") {
                     $(_this).parent().css({
