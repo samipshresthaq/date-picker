@@ -94,4 +94,4 @@ date-picky is a date picker with great graphics
 #Demo
 
 You can see demo here
-[Demo Page] (http://samipshresthaq.github.io/date-picky/)
+[Demo Page] (https://samipshresthaq.github.io/date-picker/)
