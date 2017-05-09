@@ -22,18 +22,20 @@ date-picky is a date picker with great graphics
             activation: 'alwaysOn',
             singleCalendarMode: true,
             showCurrentDate: false,
+            showCurrentDateButton: false,
             preDates: ['2017/3/1','2017/3/15','2017/3/14'],//yyyy-mm-dd
-            preDatesClickable: true,
             setWeekHoliday: false,
             holiday: 'saturday',
+            disableClickEvent : false,
             disableClickToggle: true,
-            
             callback: function(date){
                 console.log(date);
             },
+            
 			headingBackground: '#223922',//removed
 			bodyBackground: '#796423'//removed
-		}
+		};
+        
 		$('#yourSelector').datePicky(options);
 	
 	The different types of feature are:
@@ -76,31 +78,51 @@ date-picky is a date picker with great graphics
 		  eg. __bodyBackground : your color code__
         
     - _Activation Option_
-        You can set date picker activation mode. Set alwaysOn(default) for always showing datepicker and onClick mode for datepicker activation on click. eg
+        You can set date picker activation mode. Set alwaysOn(default) for always showing datepicker and o
+        nClick mode for datepicker activation on click. eg
             1. __activation : alwaysOn__
             2. __activation : onClick__
     
     - _Single Calendar Mode_
-        If set to true you can select dates for current month only. If set false you can traverse throught all months. By default it is disabled. 
+        If set to true you can select dates for current month only. If set false you can traverse 
+        throught all months. By default it is disabled. 
             eg. __singleCalendarMode : true__
             
     - _Show Current Date_
         You can dhide current date by setting showCurrentDate to false. By default current date is shown.
             eg. __showCurrentDate: false__
     
-    - _Pre Dates_
-        You can set pre activated dates by sending in preDates options. Pre dates must be sent in array in yyyy-mm-dd format.
-            eg. __preDates: ['2017-3-1','2017-3-15','2017-3-14']__
-            
-    - _Pre Dates Click Option_
-        You can disable click on pre activated dates by setting it to false. By default its disabled.
-            eg. __preDatesClickable: true__
-    
     - _Go to current date button_
         You can disable "Go to current date" button by providing parameter as. By default its enabled.
             eg. __showCurrentDateButton = false__
+    
+    - _Pre Dates_
+        You can set pre activated dates by sending in preDates options. Pre dates must be sent in array 
+        in yyyy-mm-dd format.
+            eg. __preDates: ['2017-3-1','2017-3-15','2017-3-14']__
+            
+    - _Disable all click events_
+        If set to true all click events are disabled. By default it is disabled.
+            eg. __disableClickEvent : false__
+    
+    - _Set red color for weekend holiday_
+        If set to true weekend day is highlighted red. By default it is disabled.
+            eg. __setWeekHoliday: true__
+            
+    - _Set the weekend holiday_
+        By default weekend holiday is sunday. If set to saturday, saturday is highlighted red.
+        eg.
+            1. __holiday: 'sunday'__
+            2. __holiday: 'saturday'__
             
     - _Callback Function_
+        Use callback function to trigger function when clicked on any date. Callback function returns two 
+        values i.e clicked date and array of active dates.
+        Usage example:
+            callback: function(date, activedates){
+                console.log(date);
+                console.log(activedates);
+            }
     
 #Demo
 

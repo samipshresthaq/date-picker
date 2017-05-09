@@ -9,10 +9,13 @@
         activation: 'alwaysOn',
         singleCalendarMode: false,
         showCurrentDate: true,
-        callback: function(date){
+        
+        callback: function(date, activedates){
             console.log(date);
+                        console.log(activedates);
+
         },
-        setWeekHoliday: false,
+        setWeekHoliday: true,
         holiday: 'saturday',
         disableClickToggle: true
         
@@ -34,5 +37,5 @@
 	}
 
 	$('#input-date').datePicky(options2);
-	$('.div-date').datePicky();
+	$('.div-date').datePicky(options1);
 })();

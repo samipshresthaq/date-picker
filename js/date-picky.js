@@ -222,7 +222,7 @@
                     // Callback funtion call if it is set
                     if (options.callback) {
                         //                    if ($(that).hasClass('active')) {
-                        options.callback.call(this, $(that).attr('date-value'));
+                        options.callback.call(this, $(that).attr('date-value'),activeDates);
                         //                    }
                         if (!options.disableClickToggle) {
                             $(that).toggleClass('active');
@@ -440,12 +440,12 @@
                                 }
                             }
                             // Red class for sunday
-                            if (j == 7 && options.holiday.toLowerCase() == "saturday") {
-                                if (options.setWeekHoliday)
+                            if (options.setWeekHoliday){
+                                if (j == 7 && options.holiday.toLowerCase() == "saturday") {
                                     $td.addClass('red');
-                            } else if (j == 1 && options.holiday.toLowerCase() == "sunday") {
-                                if (options.setWeekHoliday)
+                                } else if (j == 1 && options.holiday.toLowerCase() == "sunday") {
                                     $td.addClass('red');
+                                }
                             }
                             // For Start Date
                             if (options.minDate) {
@@ -486,7 +486,7 @@
                     };
                     if (setWeekHoliday && (holiday.toLowerCase() == "saturday")) {
                         $tr.children().last().addClass('red');
-                    } else if (setWeekHoliday) {
+                    } else if (setWeekHoliday && (holiday.toLowerCase() == "sunday")) {
                         $tr.children().first().addClass('red');
                     }
                     $table.append($tr);
