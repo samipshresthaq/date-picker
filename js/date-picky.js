@@ -12,7 +12,7 @@
      * @return {[DOM element]}         [returns datePicker]
      */
     $.fn.datePicky = function (options) {
-        var _this = this,
+        let _this = this,
             defaultOption = {
                 multipleDate: true,
                 format: 'YYYY-MM-DD',
@@ -35,14 +35,24 @@
             currentDate = newDate.getDate(), // Days name label in order
             daysLabels = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'], // Month name labels in order
             monthsLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], // Min Month name labels in order
-            monthsLabelsMin = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            monthsLabelsMin = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        
+            // Set the custom datepicker Year visible to user 
+            if(options.customStartViewYear){
+                currentYear = options.customStartViewYear;
+            }    
+        
+            // Set the custom datepicker Month visible to user 
+            if(options.customStartViewMonth){
+                currentMonth = options.customStartViewMonth - 1;
+            }
             /**
              * [daysInMonth calculates total days in a month]
              * @param  {[int]} month [month value]
              * @param  {[int]} year  [year valur]
              * @return {[int]}       [returns total days]
              */
-            daysInMonth = function (month, year) {
+            var daysInMonth = function (month, year) {
                 return new Date(year, month, 0).getDate();
             },
             AppendDate = {
@@ -121,6 +131,13 @@
                  * @param {[object]} options     [all options setting]
                  */
                 setHeading: function ($datePicker, _this, options) {
+                                        console.log(currentMonth);
+
+                                        console.log(currentYear);
+                    
+                    console.log(currentDate);
+
+                    debugger;
                     var $headingWrapper = $("<div/>", {
                             class: "calendar-heading"
                         }),

@@ -17,7 +17,10 @@
         },
         setWeekHoliday: true,
         holiday: 'saturday',
-        disableClickToggle: true
+        disableClickToggle: true,
+        customStartViewMonth: 4,
+        customStartViewYear: 2017
+        
         
         //animation: 'flipInY',
 	}

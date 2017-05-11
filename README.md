@@ -123,6 +123,14 @@ date-picky is a date picker with multiple features
                 console.log(date);
                 console.log(activedates);
             }
+            
+    - _Display Month_
+        Month to display when datepicker is invoked. Usage example:
+            customStartViewMonth: 4
+            
+    - _Display Year_
+        Year to display when datepicker is invoked. Usage example:
+            customStartViewYear: 2017
     
 #Demo
 
