@@ -18,8 +18,8 @@
         setWeekHoliday: true,
         holiday: 'saturday',
         disableClickToggle: true,
-        customStartViewMonth: 4,
-        customStartViewYear: 2017
+        defaultViewMonth: 10,
+        defaultViewYear: 2016
         
         
         //animation: 'flipInY',

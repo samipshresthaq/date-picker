@@ -38,13 +38,13 @@
             monthsLabelsMin = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         
             // Set the custom datepicker Year visible to user 
-            if(options.customStartViewYear){
-                currentYear = options.customStartViewYear;
+            if(options.defaultViewYear){
+                currentYear = options.defaultViewYear;
             }    
         
             // Set the custom datepicker Month visible to user 
-            if(options.customStartViewMonth){
-                currentMonth = options.customStartViewMonth - 1;
+            if(options.defaultViewMonth){
+                currentMonth = options.defaultViewMonth - 1;
             }
             /**
              * [daysInMonth calculates total days in a month]
