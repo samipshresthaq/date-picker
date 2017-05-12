@@ -27,7 +27,7 @@
                 setWeekHoliday: false,
                 holiday: 'sunday'
             },
-            allOptions = $.extend(defaultOption, options),
+            allOptions = Object.assign({},defaultOption, options),
             newDate = new Date(),
             currentYear = newDate.getFullYear(),
             currentMonth = newDate.getMonth(),
@@ -131,13 +131,6 @@
                  * @param {[object]} options     [all options setting]
                  */
                 setHeading: function ($datePicker, _this, options) {
-                                        console.log(currentMonth);
-
-                                        console.log(currentYear);
-                    
-                    console.log(currentDate);
-
-                    debugger;
                     var $headingWrapper = $("<div/>", {
                             class: "calendar-heading"
                         }),
