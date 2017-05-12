@@ -43,7 +43,7 @@
 }
 
 .datePicker .month-title {
-    font: 16px 'robotobold', sans-serif, arial;
+    font-size: 16px;
     /*    float: left;*/
     /*    width: 216px;*/
     padding: 4px;
@@ -78,7 +78,7 @@
 }
 
 .datePicker .datePicker-calendar tr th {
-    font: 14px/20px 'robotobold', sans-serif, arial;
+    font-size: 14px;
     width: 20px;
     height: 20px;
     padding: 10px;
@@ -86,7 +86,7 @@
 }
 
 .datePicker .datePicker-calendar tr td {
-    font: 14px/20px 'robotoregular', sans-serif, arial;
+    font-size: 14px;
     width: 20px;
     height: 20px;
     padding: 10px;
@@ -153,6 +153,7 @@
 
 .datePicker .datePicker-calendar .red {
     color: #c0392b;
+    background-color: transparent !important;
 }
 
 
@@ -161,7 +162,7 @@
 .footer-wrapper {
     text-align: center;
     margin: 10px;
-    font: 14px 'robotoregular', sans-serif;
+    font-size: 14px;
     font-weight: 200;
     cursor: pointer;
     background: #16a085;
