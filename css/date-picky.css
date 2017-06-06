@@ -1,3 +1,8 @@
+@charset "UTF-8";/*!
+ * date-picky.css
+ *
+ * Copyright (c) 2017 Samip Shrestha
+ */
 .datePicker *:after {
     display: block;
     clear: both;

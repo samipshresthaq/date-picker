@@ -1,4 +1,4 @@
-/**
+/*!
  * date-picky
  * @author Samip Shrestha <javasamip@gmail.com>
  * To support the developer please include this comment section
