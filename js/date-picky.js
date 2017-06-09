@@ -38,12 +38,12 @@
             monthsLabelsMin = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         
             // Set the custom datepicker Year visible to user 
-            if(options.defaultViewYear){
+            if(allOptions.hasOwnProperty('defaultViewYear')){
                 currentYear = options.defaultViewYear;
             }    
         
             // Set the custom datepicker Month visible to user 
-            if(options.defaultViewMonth){
+            if(allOptions.hasOwnProperty('hasdefaultViewMonth')){
                 currentMonth = options.defaultViewMonth - 1;
             }
             /**
