@@ -101,6 +101,10 @@ date-picky is a date picker with multiple features
         in yyyy-mm-dd format.
             eg. __preDates: ['2017-3-1','2017-3-15','2017-3-14']__
             
+    - _Pre Dates visibility_
+        Hide active pre dates by setting shoPreDates option to false. By default its true
+            eg. __showPreDates: false__
+            
     - _Disable all click events_
         If set to true all click events are disabled. By default it is disabled.
             eg. __disableClickEvent : false__

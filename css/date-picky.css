@@ -156,11 +156,9 @@
     box-shadow: none;
 }
 
-.datePicker .datePicker-calendar .red {
+.datePicker .datePicker-calendar .red-color {
     color: #c0392b;
-    background-color: transparent !important;
 }
-
 
 /* Footer */
 

@@ -3,7 +3,8 @@
     'use strict';
     var options1 = {
         multipleDate: false
-        , preDates: ['2017-03-01', '2017-03-30', '2017-03-14'], //yyyy-mm-dd
+        , preDates: ['2017-06-18', '2017-06-1', '2017-06-19'], //yyyy-mm-dd
+        showPreDates: false,
         showCurrentDateButton: true
         , activation: 'alwaysOn'
         , singleCalendarMode: false
@@ -15,8 +16,8 @@
         , setWeekHoliday: true
         , holiday: 'saturday'
         , disableClickToggle: true
-        , defaultViewMonth: 10
-        , defaultViewYear: 2016
+//        , defaultViewMonth: 10
+//        , defaultViewYear: 2016
             //animation: 'flipInY',
     }
     var options2 = {

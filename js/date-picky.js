@@ -25,7 +25,8 @@
                 showCurrentDateButton: true,
                 disableClickEvent: false,
                 setWeekHoliday: false,
-                holiday: 'sunday'
+                holiday: 'sunday',
+                showPreDates: true
             },
             allOptions = Object.assign({},defaultOption, options),
             newDate = new Date(),
@@ -299,7 +300,7 @@
                  * @param  {[boolean]} clickable [pre dates clickable option]
                  * @return {[DOM element]}             [element with object class]
                  */
-                checkForActiveDates: function ($element, year, month, date, activeDatesArray) {
+                checkForActiveDates: function ($element, year, month, date, activeDatesArray,showPreDates) {
                     for (var i = 0; i < activeDatesArray.length; i++) {
                         if (activeDatesArray[i][0] == year) {
                             if (activeDatesArray[i][1] == month) {
@@ -307,7 +308,8 @@
                                     //                                if (!clickable) {
                                     //                                    $element.addClass('disabled');
                                     //                                }
-                                    $element.addClass('active');
+                                    if(showPreDates)
+                                        $element.addClass('active');
                                 }
                             }
                         }
@@ -389,7 +391,7 @@
                                         $prevMonthDate = AppendDate.checkForMaxDate($prevMonthDate, prevYear, prevMonth, (parseInt(previousMonthTotalDate) - k), fullEndDate);
                                     }
                                     //Check for active dates
-                                    $prevMonthDate = AppendDate.checkForActiveDates($prevMonthDate, prevYear, prevMonth, (parseInt(previousMonthTotalDate) - k), activeDatesArray);
+                                    $prevMonthDate = AppendDate.checkForActiveDates($prevMonthDate, prevYear, prevMonth, (parseInt(previousMonthTotalDate) - k), activeDatesArray,options.showPreDates);
 
                                     $prevMonthDate.attr('date-value', (prevYear + '-' + AppendDate.formatDate(prevMonth) + '-' + AppendDate.formatDate(parseInt(previousMonthTotalDate) - k)));
                                     $prevMonthDate.text(previousMonthTotalDate - k);
@@ -426,8 +428,7 @@
                                     }
 
                                     //Check for active dates
-                                    $nextMonthDate = AppendDate.checkForActiveDates($nextMonthDate, nextYear, nextMonth, count, activeDatesArray);
-
+                                    $nextMonthDate = AppendDate.checkForActiveDates($nextMonthDate, nextYear, nextMonth, count, activeDatesArray, options.showPreDates);
                                     $nextMonthDate.attr('date-value', (nextYear + '-' + AppendDate.formatDate(nextMonth) + '-' + AppendDate.formatDate(count)));
                                     $nextMonthDate.text(count);
                                     $tr.append($nextMonthDate);
@@ -452,9 +453,9 @@
                             // Red class for sunday
                             if (options.setWeekHoliday){
                                 if (j == 7 && options.holiday.toLowerCase() == "saturday") {
-                                    $td.addClass('red');
+                                    $td.addClass('red-color');
                                 } else if (j == 1 && options.holiday.toLowerCase() == "sunday") {
-                                    $td.addClass('red');
+                                    $td.addClass('red-color');
                                 }
                             }
                             // For Start Date
@@ -466,7 +467,7 @@
                                 $td = AppendDate.checkForMaxDate($td, currentYear, (parseInt(currentMonth) + 1), i, fullEndDate);
                             }
                             //Check for active dates
-                            $td = AppendDate.checkForActiveDates($td, currentYear, (parseInt(currentMonth) + 1), i, activeDatesArray);
+                            $td = AppendDate.checkForActiveDates($td, currentYear, (parseInt(currentMonth) + 1), i, activeDatesArray,options.showPreDates);
                             $td.attr('date-value', currentYear + '-' + AppendDate.formatDate(parseInt(currentMonth) + 1) + '-' + AppendDate.formatDate(i));
                             $td.text(i);
                             $td.click(function (e) {
@@ -495,9 +496,9 @@
                         $tr.append($th);
                     };
                     if (setWeekHoliday && (holiday.toLowerCase() == "saturday")) {
-                        $tr.children().last().addClass('red');
+                        $tr.children().last().addClass('red-color');
                     } else if (setWeekHoliday && (holiday.toLowerCase() == "sunday")) {
-                        $tr.children().first().addClass('red');
+                        $tr.children().first().addClass('red-color');
                     }
                     $table.append($tr);
                     return ($table);
