@@ -112,9 +112,9 @@
     box-shadow: inset 0px -4px 0px 0px rgba(99, 98, 98, 0.27);
 }
 
-.datePicker .datePicker-calendar tr td.active,
-.datePicker .datePicker-calendar tr td.active:hover,
-.datePicker .datePicker-calendar tr td.active.disabled:hover {
+.datePicker .datePicker-calendar tr td.active:not(.disabled),
+.datePicker .datePicker-calendar tr td.active:hover:not(.disabled),
+.datePicker .datePicker-calendar tr td.active.disabled:hover:not(.disabled) {
     color: #ecf0f1;
     background: #42a5f5;
     -webkit-box-shadow: inset 4px 4px 2px 0px rgba(99, 98, 98, 0.27);

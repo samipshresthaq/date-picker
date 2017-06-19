@@ -2,9 +2,10 @@
 (function () {
     'use strict';
     var options1 = {
-        multipleDate: false
-        , preDates: ['2017-06-18', '2017-06-1', '2017-06-19'], //yyyy-mm-dd
-        showPreDates: false,
+        multipleDate: false,
+        minDate: "2017-06-19",
+        preDates: ['2017-06-18', '2017-06-1', '2017-06-19','2017-06-20'], //yyyy-mm-dd
+//        showPreDates: false,
         showCurrentDateButton: true
         , activation: 'alwaysOn'
         , singleCalendarMode: false
